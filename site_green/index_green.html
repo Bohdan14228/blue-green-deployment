@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{APP_COLOR}} Environment - V{{APP_VERSION}}</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            color: #1e3d59;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            border-radius: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 5em;
+            margin: 0;
+            /* Этот цвет будет заменен Node.js: #007bff (BLUE) или #28a745 (GREEN) */
+            color: #007bff; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #6c757d;
+        }
+        .status {
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{APP_COLOR}}</h1> 
+        <p>Active Version: {{APP_VERSION}} (Node.js Server)</p>
+        
+        <div class="status">
+            MongoDB Status: <span id="db-status">{{DB_STATUS}}</span>
+        </div>
+    </div>
+</body>
+</html>

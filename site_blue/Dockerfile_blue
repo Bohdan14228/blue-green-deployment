@@ -1,0 +1,27 @@
+FROM node:20-alpine as dependencies
+
+WORKDIR /app
+
+COPY package*.json .
+
+RUN npm ci --only=production
+
+FROM node:20-alpine
+
+RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001
+
+WORKDIR /app
+
+COPY --from=dependencies --chown=nodejs:nodejs /app/node_modules ./node_modules
+
+COPY --chown=nodejs:nodejs package*.json ./
+
+COPY --chown=nodejs:nodejs server_blue.js ./
+
+COPY --chown=nodejs:nodejs index_blue.html ./
+
+USER nodejs
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

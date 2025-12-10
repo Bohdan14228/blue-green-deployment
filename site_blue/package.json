@@ -1,0 +1,17 @@
+{
+  "name": "site_blue",
+  "version": "1.0.0",
+  "main": "server_blue.js",
+  "scripts": {
+    "start": "node server_blue.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1"
+  }
+}
